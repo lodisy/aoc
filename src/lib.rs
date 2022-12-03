@@ -1,15 +1,17 @@
-mod calorie_counting_1;
+mod day01 {
+    pub mod calorie_counting;
+}
 
-mod rock_paper_scissors_2;
+mod day02 {
+    pub mod rock_paper_scissors;
+}
 
 #[cfg(test)]
 mod tests {
 
     #[test]
     fn calorie_counting() {
-        let path = "calorie.txt";
-
-        let [result_one, result_two] = crate::calorie_counting_1::calculate(path);
+        let [result_one, result_two] = crate::day01::calorie_counting::calculate();
 
         assert_eq!(result_one, 70_116);
 
@@ -18,13 +20,11 @@ mod tests {
 
     #[test]
     fn rock_paper_scissors() {
-        let path = "input.txt";
-
-        let result_one = crate::rock_paper_scissors_2::calculate(path, true);
+        let result_one = crate::day02::rock_paper_scissors::calculate(true);
 
         assert_eq!(result_one, 11449);
 
-        let result_two = crate::rock_paper_scissors_2::calculate(path, false);
+        let result_two = crate::day02::rock_paper_scissors::calculate(false);
 
         assert_eq!(result_two, 13187);
     }

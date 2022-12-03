@@ -1,15 +1,8 @@
-use std::{fs::File, io::Read, path::Path};
-
 #[allow(dead_code)]
-pub fn calculate(path: &str, part_one: bool) -> i32 {
-    let path = Path::new(path);
+pub fn calculate(part_one: bool) -> i32 {
+    let data = include_str!("./input.txt");
 
-    let mut file = File::open(&path).unwrap();
-    let mut buffer = String::new();
-
-    file.read_to_string(&mut buffer).unwrap();
-
-    let mut s: Vec<&str> = buffer.split("\n").collect();
+    let mut s: Vec<&str> = data.split("\n").collect();
 
     let total: Vec<i32> = s
         .iter_mut()

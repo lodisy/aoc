@@ -1,14 +1,8 @@
-use std::{fs::File, io::Read, path::Path};
 #[allow(dead_code)]
-pub fn calculate(path: &str) -> [i32; 2] {
-    let path = Path::new(path);
+pub fn calculate() -> [i32; 2] {
+    let data = include_str!("./calorie.txt");
 
-    let mut file = File::open(&path).unwrap();
-    let mut buffer = String::new();
-
-    file.read_to_string(&mut buffer).unwrap();
-
-    let mut s: Vec<&str> = buffer.split("\n\n").collect();
+    let mut s: Vec<&str> = data.split("\n\n").collect();
 
     let mut s: Vec<String> = s.iter_mut().map(|x| x.replace("\n", ",")).collect();
 
