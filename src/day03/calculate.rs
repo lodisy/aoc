@@ -79,7 +79,7 @@ pub fn calculate() -> [usize; 2] {
             if let Some(_) = a[1].find(b[i]) {
                 if let Some(_) = a[2].find(b[i]) {
                     duplicates_two.push(b[i]);
-                    break;
+                    break; // cause we know there is only one badage
                 }
             }
         }

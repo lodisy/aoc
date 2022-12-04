@@ -10,6 +10,10 @@ mod day03 {
     pub mod calculate;
 }
 
+mod day04 {
+    pub mod calculate;
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -40,5 +44,14 @@ mod tests {
         assert_eq!(sum_one, 7889);
 
         assert_eq!(sum_two, 2825);
+    }
+
+    #[test]
+    fn camp_cleanup() {
+        let [result_one, result_two] = crate::day04::calculate::calculate();
+
+        assert_eq!(571, result_one);
+
+        assert_eq!(917, result_two);
     }
 }
